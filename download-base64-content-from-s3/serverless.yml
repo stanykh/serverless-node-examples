@@ -1,0 +1,32 @@
+service: download-base64-content-from-s3
+
+custom:
+  bucket: my-serverless-projects/test-content
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-southeast-1  
+  deploymentBucket: my-serverless-projects
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync        
+      Resource: "arn:aws:lambda:ap-southeast-1:*:*:*"  
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+
+functions:
+  downloadBase64Content:
+    handler: handler.downloadBase64Content
+    environment:
+      BUCKET: ${self:custom.bucket}    
+    events:
+    - http:
+        path: download-base64-content-from-s3/{filename}
+        method: get   
+
