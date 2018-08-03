@@ -1,7 +1,7 @@
 service: aws-lambda-node-upload-to-s3
 
 custom:
-  bucket: my-serverless-projects/test-s3-upload
+  bucket: my-serverless-projects/test-content
 
 provider:
   name: aws
@@ -27,5 +27,5 @@ functions:
       BUCKET: ${self:custom.bucket}    
     events:
     - http:
-        path: uploadToS3
+        path: upload-to-s3
         method: post

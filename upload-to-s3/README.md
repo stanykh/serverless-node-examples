@@ -36,7 +36,7 @@ stack: aws-lambda-node-upload-to-s3-dev
 api keys:
   None
 endpoints:
-  POST - https://notreal.execute-api.ap-southeast-1.amazonaws.com/dev/uploadToS3
+  POST - https://notreal.execute-api.ap-southeast-1.amazonaws.com/dev/upload-to-s3
 functions:
   uploadToS3: aws-lambda-node-upload-to-s3-dev-uploadToS3
 ```
