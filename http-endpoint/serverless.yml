@@ -1,0 +1,44 @@
+service: aws-node-http-endpoint
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-southeast-1  
+  deploymentBucket: my-serverless-projects  
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync        
+      Resource: "arn:aws:lambda:ap-southeast-1:*:*:*"  
+
+functions:
+  queryString:
+    handler: handler.queryString
+    events:
+      - http:
+          path: query-string
+          method: get
+          cors: true
+  pathParameters:
+    handler: handler.pathParameters
+    events:
+      - http:
+          path: path-parameters/{id}
+          method: get
+          cors: true 
+  multiPathParameters:
+    handler: handler.multiPathParameters
+    events:
+      - http:
+          path: multipath-parameters/{id1}/{id2}
+          method: get
+          cors: true                    
+  postRequest:
+    handler: handler.postRequest
+    events:
+      - http:
+          path: post-request
+          method: post    
+          cors: true            
