@@ -1,4 +1,4 @@
-service: http-endpoints-mocha
+service: aws-node-http-endpoints-mocha
 
 provider:
   name: aws

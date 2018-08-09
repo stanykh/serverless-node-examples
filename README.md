@@ -15,7 +15,7 @@ $ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 Once you have done that, go to AWS IAM console and create a user. You may want to grant an AdministratorAccess to this user. Once this user is created, it will be assigned with Access key ID and Secret access key.
 
 ### Step 3: Edit ~/.aws/config 
-This step is specify the default region based on the username (username must match the user that you created in IAM). Nothing fancy, you may change it to any region of your liking.
+This step is specify the default region based on the username (username must match the user that you created in IAM). Nothing fancy, you may change it to any region to your liking.
 
 ```
 [default]
