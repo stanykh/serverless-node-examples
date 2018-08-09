@@ -1,0 +1,30 @@
+service: http-endpoints-mocha
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-southeast-1  
+  deploymentBucket: my-serverless-projects  
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync        
+      Resource: "arn:aws:lambda:ap-southeast-1:*:*:*"  
+
+functions:
+  hello:
+    handler: src/handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true      
+  login:
+    handler: src/handler.login
+    events:
+      - http:
+          path: login
+          method: post
+          cors: true                

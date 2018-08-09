@@ -1,0 +1,19 @@
+{
+  "name": "http-endpoints-mocha",
+  "version": "0.0.1",
+  "description": "HTTP endpoints demo with Mocha/Chai",
+  "author": "Stanley Yong",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.280.1",
+    "mocha": "^3.2.0",
+    "chai": "^4.1.2",
+    "chai-http": "^2.0.1",
+    "serverless": "^1.29.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  }
+}
