@@ -1,4 +1,4 @@
-# HTTP endpoint demo
+# HTTP endpoints demo
 
 Demonstrate different usage of HTTP endpoints for GET/POST request, with query string and path parameter. The demo includes different combination of the two above for most possible usage. The endpoints in this demo are:
 
