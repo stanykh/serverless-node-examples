@@ -1,0 +1,35 @@
+service: aws-node-rekognition-compare-faces 
+
+custom:
+  bucket: ap-northeast-1-test-content
+  sourceImage: margot-1.jpg
+  targetImage: margot-2.jpg
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-northeast-1 # Nearest AZ to offer rekognition is Tokyo  
+  deploymentBucket: my-serverless-projects-ap-northeast-1  
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync        
+      Resource: "arn:aws:lambda:ap-northeast-1:*:*:*"  
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*" 
+    - Effect: "Allow"
+      Action:
+        - "rekognition:*"
+      Resource: "*"             
+
+functions:
+  compareFaces:
+    handler: handler.compareFaces
+    environment:
+      BUCKET: ${self:custom.bucket}    
+      SOURCE_IMAGE: ${self:custom.sourceImage}
+      TARGET_IMAGE: ${self:custom.targetImage}
