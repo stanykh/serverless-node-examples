@@ -1,4 +1,4 @@
-service: aws-node-rekognition-compare-faces 
+service: sls-rekognition-compare-faces 
 
 custom:
   bucket: ap-northeast-1-test-content

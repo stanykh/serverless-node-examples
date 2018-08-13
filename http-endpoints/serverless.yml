@@ -1,4 +1,4 @@
-service: aws-node-http-endpoints
+service: sls-http-endpoints
 
 provider:
   name: aws

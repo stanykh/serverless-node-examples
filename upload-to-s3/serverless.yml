@@ -1,4 +1,4 @@
-service: aws-node-upload-to-s3
+service: sls-upload-to-s3
 
 custom:
   bucket: my-serverless-projects/test-content

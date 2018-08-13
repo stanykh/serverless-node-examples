@@ -1,4 +1,4 @@
-service: aws-node-http-endpoints-mocha
+service: sls-http-endpoints-mocha
 
 provider:
   name: aws
