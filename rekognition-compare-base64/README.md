@@ -12,7 +12,7 @@ serverless deploy --stage dev --region ap-northeast-1
 ```
 
 ## Test
-To test, simply invoke the function by specifying the deployment stage and region. I specify the region because ap-northeast-1 is not my default region. 
+To test, simply make sure both image source.jpg and target.jpg is in the directory where you execute the test command. The command to encodes source.jpg and target.jpg image as base64-encoded image in a JSON object and send it to the HTTP endpoint.
 
 ```
 (echo -n '{"source": "'; base64 ./source.jpg; echo '", "target": "'; base64 ./target.jpg; echo '"}') | curl -H "Content-Type: application/json" -d @-  https://notreal.execute-api.ap-northeast-1.amazonaws.com/dev/compare-faces-base64
