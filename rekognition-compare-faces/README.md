@@ -2,7 +2,7 @@
 
 This example compare two images that were stored in S3. You have to create a bucket in the region that you will be testing your code and upload 2 images that you wished to compare.
 
-## Customization
+## Edit serverless.yml
 You will need to do some simple editing on the serverless.yml to specify the bucket name, source image, and target image.
 
 ```
