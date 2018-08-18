@@ -37,7 +37,7 @@ region = ap-southeast-1
 output = json
 ```
 
-### Step 4: Edit ~/.aws/credential
+### Step 4: Edit ~/.aws/credentials
 Insert your IAM user Access key ID and Secret access key here. Both default and username can be of the same value. 
 
 ```
